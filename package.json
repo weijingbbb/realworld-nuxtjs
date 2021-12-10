@@ -7,6 +7,9 @@
     "start": "nuxt start"
   },
   "dependencies": {
+    "axios": "^0.24.0",
+    "cookieparser": "^0.1.0",
+    "js-cookie": "^3.0.1",
     "nuxt": "^2.15.8"
   }
 }
