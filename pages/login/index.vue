@@ -68,7 +68,8 @@ export default {
         this.$store.commit("setUser", data.user);
 
         // 为了防止刷新页面数据丢失，把数据持久化
-        Cookie.set("user", data.user);
+        Cookie.set("user", JSON.stringify(data.user));
+
 
         // 跳转首页
         this.$router.push("/");

@@ -37,6 +37,11 @@ module.exports = {
                             path: '/profile/:username',  //  用户信息
                             name: 'profile',
                             component: resolve(__dirname, 'pages/profile/'),
+                        },                        
+                        {
+                            path: '/profile',  //  用户收藏和文章
+                            name: 'profile/:username',
+                            component: resolve(__dirname, 'pages/profile/'),
                         },
                         {
                             path: '/settings',  //  用户设置
@@ -62,5 +67,16 @@ module.exports = {
             //     component: resolve(__dirname, 'pages/404.vue')
             // })
         }
+    },
+
+    // 注册插件
+    plugins: [
+        '~/plugins/request.js',
+        '~/plugins/dayjs.js',
+    ],
+
+    server: {
+        host: '0.0.0.0',
+        port: 3000,
     }
 }

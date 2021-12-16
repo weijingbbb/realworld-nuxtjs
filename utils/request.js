@@ -11,7 +11,14 @@ const request = axios.create({
 })
 
 // 请求拦截器
+request.interceptors.request.use(function (config){
 
+    config.headers.Authorization = `Token `
+    return config;
+}, function (error) {
+    // 如果请求失败（此时请求还没有发出去），就会进入这里
+    return Promise.reject(error);
+})
 
 
 
